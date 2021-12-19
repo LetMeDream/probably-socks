@@ -1,9 +1,8 @@
-/* First, lets create our Vue App */
 const app = Vue.createApp({
-    data: function(){
-        return{
+    data() {
+        return {
             product: 'Socks',
-            description: 'Socks depiction'
+            path: './assets/images/socks_green.jpg'
         }
     }
 }).mount('#app')
