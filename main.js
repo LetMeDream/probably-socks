@@ -2,7 +2,8 @@
 const app = Vue.createApp({
     data: function(){
         return{
-            product: 'Socks'
+            product: 'Socks',
+            description: 'Socks depiction'
         }
     }
 }).mount('#app')
