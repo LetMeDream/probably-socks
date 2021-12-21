@@ -1,8 +1,12 @@
 app.component('product-display', {
   props: {
-    premium: {
+    premium: { // Prop options that work as documentation
       type: Boolean,
       required: true
+    },
+    cart:{
+        type: Array,
+        required:true
     }
   },
   template: 
@@ -39,6 +43,16 @@ app.component('product-display', {
           v-on:click="addToCart">
           Add to Cart
         </button>
+
+        <button 
+          class="button" 
+          :class="{ disabledButton: !cart.length }" 
+          @click='removeItem'
+          >
+          Remove item
+        </button>
+
+
       </div>
     </div>
   </div>`,
@@ -49,17 +63,28 @@ app.component('product-display', {
         selectedVariant: 0,
         details: ['50% cotton', '30% wool', '20% polyester'],
         variants: [
-          { id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 50 },
-          { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg', quantity: 0 },
+          { id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 1 },
+          { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg', quantity: 3 },
         ]
     }
   },
   methods: {
       addToCart() {
-          this.cart += 1
+          /* Telling out parent that the Cart must be updated via $emit */
+          this.$emit('add-to-cart', {
+              id:this.variants[this.selectedVariant].id,
+              color: this.variants[this.selectedVariant].color
+            });
+          /* Then, we need to discount the product picked by the user */
+          this.variants[this.selectedVariant].quantity -= 1;
       },
       updateVariant(index) {
           this.selectedVariant = index
+      },
+      removeItem(){
+            this.cart.pop();
+            this.variants[this.selectedVariant].quantity += 1; 
+            this.$emit('show')
       }
   },
   computed: {
