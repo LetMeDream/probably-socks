@@ -17,6 +17,7 @@
       <product-display @show='showCart' @add-to-cart='updateCart' :premium="premium" :cart='cart'></product-display>
       <product-display @show='showCart' @add-to-cart='updateCart' :premium="premium" :cart='cart'></product-display>
       <product-display @show='showCart' @add-to-cart='updateCart' :premium="premium" :cart='cart'></product-display>
+      <review-list :reviews='reviews'></review-list>
       <review-form @review-submitted='addReview'></review-form>
     </div>
 
@@ -26,6 +27,7 @@
     <script src="./components/ProductDisplay.js"></script>
     <script src='./components/ProductDetails.js'></script>
     <script src="./components/ReviewForm.js"></script>
+    <script src="./components/ReviewList.js"></script>
 
 
 
