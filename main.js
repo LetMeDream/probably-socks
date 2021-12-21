@@ -18,4 +18,4 @@ const app = Vue.createApp({
             this.selectedVariant = index;
         }
     }
-}).mount('#app')
+})
