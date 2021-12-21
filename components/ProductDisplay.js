@@ -32,10 +32,10 @@ app.component('product-display', {
         return {
             product: 'Socks',
             brand: 'Vue Mastery',
-            selectedVariant: 0,
+            selectedVariant: 1,
             variants: [
-              { id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 50 },
-              { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg', quantity: 0 },
+              { id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 0 },
+              { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg', quantity: 4 },
             ]
         }
     },
