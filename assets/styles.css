@@ -22,9 +22,8 @@ body {
 }
 
 .cart {
+  margin: 25px 85vw;
   position:fixed;
-  margin: 42px 85vw;
-  /* float: right; */
   border: 1px solid #d8d8d8;
   padding: 30px 30px;
   background-color: white;

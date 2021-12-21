@@ -1,21 +1,17 @@
 const app = Vue.createApp({
     data() {
         return {
-            cart: 0,
-            premium: false
+            cart: [],
+            premium: true
         }
     },
     methods: {
-    }
-    ,
-    methods: {
-        add(){
-            this.cart += 1;
-            this.variants[this.selectedVariant].quantity -= 1;
-            this.variants[this.selectedVariant].quantity == 0 ? alert('out of stock!') : '';
+        updateCart(event){
+            this.cart.push(event);
+            console.log(this.cart);
         },
-        updateVariant(index) {
-            this.selectedVariant = index;
+        showCart(){
+            console.log(this.cart);
         }
     }
 })
