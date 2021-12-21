@@ -17,6 +17,7 @@
       <product-display @show='showCart' @add-to-cart='updateCart' :premium="premium" :cart='cart'></product-display>
       <product-display @show='showCart' @add-to-cart='updateCart' :premium="premium" :cart='cart'></product-display>
       <product-display @show='showCart' @add-to-cart='updateCart' :premium="premium" :cart='cart'></product-display>
+      <review-form @review-submitted='addReview'></review-form>
     </div>
 
     <!-- Import App -->
@@ -24,9 +25,9 @@
     <!-- Import Components-->
     <script src="./components/ProductDisplay.js"></script>
     <script src='./components/ProductDetails.js'></script>
+    <script src="./components/ReviewForm.js"></script>
 
-    <!-- Import Components -->
-    <script src="./components/ProductDisplay.js"></script>
+
 
     <!-- Mount App -->
     <script>

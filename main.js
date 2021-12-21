@@ -2,7 +2,8 @@ const app = Vue.createApp({
     data() {
         return {
             cart: [],
-            premium: true
+            premium: true,
+            reviews:[]
         }
     },
     methods: {
@@ -12,6 +13,10 @@ const app = Vue.createApp({
         },
         showCart(){
             console.log(this.cart);
+        },
+        addReview(review){
+            this.reviews.push(review);
+            console.log(this.reviews);
         }
     }
 })
